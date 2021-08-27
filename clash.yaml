@@ -30,17 +30,18 @@ rule-providers:
   test-classical:
     behavior: "classical"
     type: http
-    url: "https://raw.githubusercontent.com/Skyxim/test-rule/main/test-classical.yaml"
+    url: "https://raw.githubusercontent.com/Skyxim/android-speedtest/main/test1.yaml"
     interval: 3600
     path: ./classical.yaml
   test-domain:
     behavior: "domain"
     type: http
-    url: "https://raw.githubusercontent.com/Skyxim/test-rule/main/test-domain.yaml"
+    url: "https://raw.githubusercontent.com/Skyxim/android-speedtest/main/test2.yaml"
     interval: 3600
     path: ./domain.yaml
 
 rules:
-
+  - RULE-SET,test-classical,DIRECT
+  - RULE-SET,test-domain,DIRECT
 
   - MATCH,DIRECT
