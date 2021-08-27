@@ -1,0 +1,46 @@
+port: 7890
+socks-port: 7891
+allow-lan: false
+bind-address: '*'
+mode: rule
+log-level: silent
+ipv6: false
+external-controller: 127.0.0.1:9090
+hosts:
+  # '*.clash.dev': 127.0.0.1
+  # '.dev': 127.0.0.1
+  # 'alpha.clash.dev': '::1'
+profile:
+  store-selected: true
+
+dns:
+  enable: true
+  listen: 0.0.0.0:10000
+  enhanced-mode: redir-host # or fake-ip
+  fake-ip-range: 198.18.0.1/16 # Fake IP addresses pool CIDR
+
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+
+proxies:
+
+
+rule-providers:
+  test-classical:
+    behavior: "classical"
+    type: http
+    url: "https://raw.githubusercontent.com/Skyxim/test-rule/main/test-classical.yaml"
+    interval: 3600
+    path: ./classical.yaml
+  test-domain:
+    behavior: "domain"
+    type: http
+    url: "https://raw.githubusercontent.com/Skyxim/test-rule/main/test-domain.yaml"
+    interval: 3600
+    path: ./domain.yaml
+
+rules:
+
+
+  - MATCH,DIRECT
