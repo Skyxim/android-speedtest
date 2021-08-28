@@ -1,4 +1,4 @@
-rules:
+payload:
   - DOMAIN-SUFFIX,domain1.com
   - DOMAIN-SUFFIX,domain2.com
   - DOMAIN-SUFFIX,domain3.com
