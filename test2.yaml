@@ -1,4 +1,4 @@
-rule:
+payload:
   - +.domain1000.com
   - +.domain1001.com
   - +.domain1002.com
